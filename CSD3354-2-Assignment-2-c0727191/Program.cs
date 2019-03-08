@@ -23,6 +23,7 @@ namespace CSD3354_2_Assignment_2_c0727191
             Console.ReadLine();
         }
 
+
         public void Method2()
         {
             MyDelegate myDelegate = new MyDelegate(Methodl);
