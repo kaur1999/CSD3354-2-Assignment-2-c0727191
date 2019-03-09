@@ -10,37 +10,25 @@ using System.Threading.Tasks;
 // March6, 2019
 namespace CSD3354_2_Assignment_2_c0727191
 {
-    public class DelegateExercises
-
+    public class program
     {
-        public delegate int MyDelegate(int intValue);
-        public int Method1(int intMethod1)
+        public static void Main()
         {
-            return intMethod1 * 2;
+            DelegateExercises delegateExercises = new DelegateExercises();
+            delegateExercises.Method3();
         }
-
-        public int Method2(int intMethod2)
+    }
+    public class DelegateExercises
+    {
+        public delegate int MyDelegate();
+        void Methodl()
         {
-            return intMethod2 * 10;
+            System.Console.WriteLine("MyDelegate");
         }
         public void Method3()
         {
-            MyDelegate myDelegate = new MyDelegate(Method1);
-            int result1 = myDelegate(10);
-            System.Console.WriteLine(result1);
-            myDelegate = new MyDelegate(Method2);
-            int result2 = myDelegate(10);
-            System.Console.WriteLine(result2);
-        }
-
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                DelegateExercises delegateExercises = new DelegateExercises();
-                delegateExercises.Method3();
-                Console.ReadLine();
-            }
+            MyDelegate myDelegate = new MyDelegate(Methodl);
+            myDelegate();
         }
     }
 }
