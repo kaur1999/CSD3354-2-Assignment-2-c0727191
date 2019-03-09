@@ -24,6 +24,7 @@ namespace CSD3354_2_Assignment_2_c0727191
 
     public class DelegateExcercises
     {
+
         void Method1()
         {
             System.Console.WriteLine("Method1");
