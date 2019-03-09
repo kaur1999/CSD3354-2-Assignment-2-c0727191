@@ -10,46 +10,38 @@ using System.Threading.Tasks;
 // March6, 2019
 namespace CSD3354_2_Assignment_2_c0727191
 {
-    using System;
-    delegate void ExampleDelegate(String xyz);
-
-
-    class Program
+    public class program
     {
-        public static void Method1(String xyz)
-        {
-            Console.WriteLine(xyz + " Method 1");
-        }
-        public static void Method2(String xyz)
-        {
-            Console.WriteLine(xyz + " Method 2");
-        }
         public static void Main()
         {
-            ExampleDelegate ex1Delegate, ex2Delegate, ex3Delegate,
-myDelegate;
-            ex1Delegate = new ExampleDelegate(Method1);
-            ex2Delegate = new ExampleDelegate(Method2);
-            ex3Delegate = ex1Delegate + ex2Delegate;
-            myDelegate = ex1Delegate - ex2Delegate;
-            ex1Delegate("AAA");
-            ex2Delegate("BBB");
-            ex3Delegate("CCC");
-            myDelegate("DDD");
-            myDelegate = ex3Delegate - ex1Delegate;
-            myDelegate("EEE");
-            myDelegate = ex3Delegate - ex2Delegate;
-            myDelegate("FFF");
-            Console.ReadLine();
-
+            {
+                DelegateExercises delegateExercises = new DelegateExercises();
+                delegateExercises.Method3();
+                Console.ReadLine();
+            }
+        }
+        public delegate int MyDelegate(out int i);
+        public class DelegateExercises
+        {
+            int Method1(out int i)
+            {
+                System.Console.WriteLine("Method1");
+                i = 10;
+                return 0;
+            }
+            public void Method3()
+            {
+                MyDelegate myDelegate = new MyDelegate(Method1);
+                MyDelegate myDelegate1 = new MyDelegate(Method1);
+                MyDelegate myDelegate2 = myDelegate + myDelegate1;
+                int intValue;
+                myDelegate2(out intValue);
+            }
 
 
         }
-
     }
-
 }
-
 
 
 
