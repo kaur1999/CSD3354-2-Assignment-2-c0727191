@@ -10,19 +10,16 @@ using System.Threading.Tasks;
 // March6, 2019
 namespace CSD3354_2_Assignment_2_c0727191
 {
-
-
     public class DelegateExercises
     {
 
         public delegate void MyDelegate();
-        void Methodl()
+        void Methodl(int i)
         {
 
             Console.WriteLine("Method1");
             Console.ReadLine();
         }
-
 
         public void Method2()
         {
@@ -30,7 +27,13 @@ namespace CSD3354_2_Assignment_2_c0727191
             myDelegate();
         }
     }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DelegateExercises delegateExercises = new DelegateExercises();
+            delegateExercises.Method2();
+        }
+    }
 }
-
-
-       
