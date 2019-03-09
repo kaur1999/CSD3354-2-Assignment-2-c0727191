@@ -13,7 +13,7 @@ namespace CSD3354_2_Assignment_2_c0727191
 
     public class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             DelegateExcercises delegateExcercises = new DelegateExcercises();
             delegateExcercises.Method3();
@@ -22,7 +22,7 @@ namespace CSD3354_2_Assignment_2_c0727191
     }
     public delegate void MyDelegate();
 
-    public class DelegateExcercises : MyDelegate
+    public class DelegateExcercises
     {
         void Method1()
         {
@@ -32,6 +32,7 @@ namespace CSD3354_2_Assignment_2_c0727191
         {
             MyDelegate myDelegate = new MyDelegate(Method1);
             myDelegate();
+            System.Console.WriteLine(myDelegate.ToString());
         }
 
     }
